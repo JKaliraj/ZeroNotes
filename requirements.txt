@@ -5,3 +5,4 @@ Pillow==9.5.0
 sqlparse==0.4.4
 typing_extensions==4.6.1
 tzdata==2023.3
+psycopg2-binary
