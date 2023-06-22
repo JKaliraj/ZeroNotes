@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
-
+import os
 
 class Department(models.Model):
     name = models.CharField(max_length=50)
@@ -44,3 +44,6 @@ class MyFile(models.Model):
     file = models.FileField(upload_to="files",null=True)
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     noteid = models.ForeignKey(Note, on_delete=models.CASCADE)
+    def extension(self):
+        name, extension = os.path.splitext(self.file.name)
+        return extension

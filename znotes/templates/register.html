@@ -16,8 +16,6 @@
     box-sizing: border-box;
     border-radius: 0.5em;
     -webkit-font-smoothing: antialiased;
-    
-
   }
 
 
@@ -129,10 +127,7 @@
     }
     form{
       min-width: 100vw;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      height: 100vh;
     }
     h2{
     font-size: 1.65em;
@@ -161,9 +156,8 @@
 </style>
 
 <br>
-
 <br>
-<div class="col-md-4 offset-md-4 text-center">
+<div class="col-md-4 offset-md-4 text-center h-100">
     <form action="{% url 'register' %}" method="post">
         <h2 class="text-center">Join the Circle of Learners</h2> <br>
         {% csrf_token %}
