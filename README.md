@@ -36,11 +36,11 @@ Start the server
 
 ## 📷 Screenshots
 
-![App Screenshot](screenshots/login.png)
+![App Screenshot](https://i.postimg.cc/SNSPmhtB/login.png)
 
-![App Screenshot](screenshots/home.png)
+![App Screenshot](https://i.postimg.cc/WzjHFLpJ/home.png)
 
-![App Screenshot](screenshots/profile.png)
+![App Screenshot](https://i.postimg.cc/05d3gQZG/profile.png)
 
 
 ## Tech Stack
