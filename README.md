@@ -38,9 +38,9 @@ Start the server
 
 ![App Screenshot](https://i.postimg.cc/wjdkQKSW-/login.png)
 
-![App Screenshot](https://i.postimg.cc/WzjHFLpJ/home.png)
+![App Screenshot](https://i.postimg.cc/cCxSn5d6/home.png)
 
-![App Screenshot](https://i.postimg.cc/05d3gQZG/profile.png)
+![App Screenshot](https://i.postimg.cc/Xqs0ccvL/profile.png)
 
 
 ## Tech Stack
