@@ -36,7 +36,7 @@ Start the server
 
 ## 📷 Screenshots
 
-![App Screenshot](https://i.postimg.cc/SNSPmhtB/login.png)
+![App Screenshot](https://i.postimg.cc/wjdkQKSW/login.png)
 
 ![App Screenshot](https://i.postimg.cc/WzjHFLpJ/home.png)
 
