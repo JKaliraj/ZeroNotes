@@ -67,7 +67,7 @@ def profile(request, id):
     myuser = get_object_or_404(models.Profile, id=id)
     userpost = models.Note.objects.filter(author = myuser.name).order_by('-id')[:6]
     userpostcount = models.Note.objects.filter(author = myuser.name).count()
-    return render(request, 'profile.html',{'myuser':myuser,"userpost1":userpost[:3],"userpost2":userpost[3:6],"userpostcount":userpostcount})
+    return render(request, 'profile.html',{'myuser':myuser,"userpost":userpost[:6],"userpostcount":userpostcount})
 
 def uploadnotes(request):
     form = forms.UploadNotesForm()

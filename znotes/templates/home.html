@@ -13,6 +13,12 @@
     height: 100vh !important;
   }
 }
+
+.mycol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
 <div class="main">
 
@@ -25,10 +31,10 @@
     <div class="main-content-body" >
       {% if notes %}
       <h4> Latest</h4>
-      <div class="row row-cols-1 row-cols-md-3" style="margin-right: 60px !important;">
+      <div class="row row-cols-1 row-cols-md-3">
 
         {% for i in notes %}
-        <div class="col" style=" padding: 0;">
+        <div class="mycol" style=" padding: 0;">
           <div class="mycard">
             <!-- <div class="mycard-header">
               <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
