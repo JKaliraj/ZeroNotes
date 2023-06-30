@@ -39,9 +39,9 @@ class RegisterForm(UserCreationForm):
         self.fields['password2'].label = ''
         self.fields['password2'].help_text = ''
 
-
-choices = models.Department.objects.all().values_list('name','name')
 choice_list=[]
+# Comment these below 3 lines when you migrate and makemigrations for first time
+choices = models.Department.objects.all().values_list('name','name')
 for i in choices:
     choice_list.append(i)
 
