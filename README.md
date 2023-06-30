@@ -33,6 +33,21 @@ Start the server
   python manage.py runserver
 ```
 
+Open in browser
+
+```bash
+  http://127.0.0.1:8000/
+```
+
+For admin dashboard
+
+```bash
+  http://127.0.0.1:8000/admin/
+
+  Username : admin
+  Password : admin
+```
+
 
 ## 📷 Screenshots
 
