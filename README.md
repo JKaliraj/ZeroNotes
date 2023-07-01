@@ -7,6 +7,12 @@ Notes Sharing Web Application
 ## 🚀 Demo
 
 [ZeroNotes](https://zeronotes.pythonanywhere.com)
+
+## 📱 Download
+
+[ZeroNotes.apk](https://github.com/JKaliraj/ZeroNotes/releases/download/ZeroNotes/ZeroNotes-v1.1.apk)
+
+
 ## 💻 Run Locally
 
 Clone the project
