@@ -153,7 +153,11 @@
   </div>
 
     <div class="profile-pic">
-      <a href="{% url 'profile' user.id %}" style="text-decoration: none;"><img src="{% static 'images/default_profile.png' %}" alt="">  </a>
+      {% if user.profile.profile_pic %}
+      <a href="{% url 'profile' user.id %}" style="text-decoration: none;"><img src="{{ user.profile.profile_pic.url }}" alt="">  </a>
+      {% else %}
+      <a href="{% url 'profile' user.id %}" style="text-decoration: none;"><img src="{% static 'images/default_profile-s.png' %}" alt="">  </a>
+      {% endif %}
     </div>
 
 </div>

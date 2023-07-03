@@ -207,11 +207,24 @@
     text-decoration: none;
   }
   }
-  
+  .error{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .errorlist{
+    text-align: center;
+    width: fit-content;
+  background-color: rgba(218, 8, 8, 0.87);
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
 </style>
 
 <div class="container">
-
+ 
   <form action="{% url 'login_user' %}" method="post">
     {% csrf_token %}
     <div class="svgContainer">
@@ -377,6 +390,11 @@
       <input type="password" id="loginPassword" class="loginPassword" name="password"/>
       <input type="checkbox" class="btn-check" id="showPasswordCheck" autocomplete="off" >
       <label  id="showPasswordToggle" for="showPasswordCheck" style="cursor: pointer;">Show</label>
+    </div>
+    <div class="error">
+      {% if error %}
+      <p class="errorlist">{{ error }}</p>
+      {% endif %}
     </div>
     <div class="inputGroup inputGroup3">
       <button id="login" type="submit">Log in</button>
@@ -967,18 +985,6 @@
     // will be used as the furthest point avatar will look to the right
     emailScrollMax = email.scrollWidth;
 
-    // check if we're on mobile/tablet, if so then show password initially
-    if (isMobileDevice()) {
-      password.type = "password";
-      showPasswordCheck.checked = true;
-      TweenMax.set(twoFingers, {
-        transformOrigin: "bottom left",
-        rotation: 30,
-        x: -9,
-        y: -2,
-        ease: Power2.easeInOut
-      });
-    }
 
     // clear the console
     console.clear();

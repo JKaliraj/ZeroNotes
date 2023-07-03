@@ -26,7 +26,7 @@ def login_user(request):
             login(request, user)
             return redirect('home')
         else:
-            return redirect('login_user')
+            return render(request, 'login.html', {"error":"Wrong Credentials"})
     return render(request, 'login.html', {})
 
 def logout_user(request):
@@ -45,7 +45,7 @@ def register(request):
             login(request, user)
             return redirect('home')
         else:
-            return redirect('register')
+            return render(request, 'register.html', {"form":form})
         
     return render(request, 'register.html', {"form":form})
 

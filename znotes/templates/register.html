@@ -2,6 +2,7 @@
 
 {% block body %}
 <style>
+  
     form {
     position: absolute;
     top: 50%;
@@ -10,6 +11,7 @@
     display: block;
     width: 100%;
     max-width: 400px;
+    height: 100%;
     background-color: #FFF;
     margin: 0;
     padding: 2.25em;
@@ -152,21 +154,31 @@
   }
   }
 
+  .errorlist li{
+    text-decoration: none;
+  }
+.errorlist{
+  background-color: rgba(218, 8, 8, 0.87);
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
 
 </style>
 
 <br>
 <br>
-<div class="col-md-4 offset-md-4 text-center h-100">
-    <form action="{% url 'register' %}" method="post">
-        <h2 class="text-center">Join the Circle of Learners</h2> <br>
-        {% csrf_token %}
-        {{ form.as_p }}
-       
-        <button type="submit"> &nbsp&nbsp Register &nbsp&nbsp</button>
-        <br>
-        <a href="{% url 'login_user' %}" class="mybtn">&nbsp&nbspAlready a User? Login Here&nbsp&nbsp</a>
-    </form>
-</div>
+
+<form action="{% url 'register' %}" method="post">
+  <h2 class="text-center">Join the Circle of Learners</h2> <br>
+  {% csrf_token %}
+  {{ form.as_p }}
+  
+  <button type="submit"> &nbsp&nbsp Register &nbsp&nbsp</button>
+  <br>
+  <a href="{% url 'login_user' %}" class="mybtn text-center">Already a User?<br>Login Here</a>
+  <br><br><br>
+</form>
+
 
 {% endblock %}

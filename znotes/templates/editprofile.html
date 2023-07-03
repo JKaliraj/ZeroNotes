@@ -18,9 +18,7 @@
     box-sizing: border-box;
     border-radius: 0.5em;
     -webkit-font-smoothing: antialiased;
-    overflow: scroll;
-
-    
+    overflow: scroll; 
 
   }
 
@@ -230,16 +228,15 @@
     <form action="{% url 'editprofile' %}" method="post" enctype="multipart/form-data">
         <h2 class="text-center" >Update Profile</h2>
         {% csrf_token %}
-        {{ userform.as_p }}
         <label for="profile-image-input" class="profile-preview-mydiv">
           <div class="profile-preview rounded-image-input">
           {% if user.profile.profile_pic %}
           <img src="{{user.profile.profile_pic.url }}" alt="">
           {%else%}
           <img src="{% static 'images/default_profile-s.png' %}" alt="">
-
           {%endif%}
         </div></label>
+        {{ userform.as_p }}
         {{ profileform.as_p }}
         <br>
         <button type="submit"> &nbsp&nbsp Update &nbsp&nbsp</button>
