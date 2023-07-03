@@ -130,3 +130,6 @@ def search(request):
         return render(request,"search.html",{"notes":mypage,"search":search})
     else:
         return render(request,"search.html",{})
+    
+def error404(request,exception):
+    return render(request,'404.html',{})
