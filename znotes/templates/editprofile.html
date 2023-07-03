@@ -225,19 +225,22 @@
 
 <br>
 <div class="container">
-    <form action="{% url 'editprofile' %}" method="post" enctype="multipart/form-data">
+    <form action="{% url 'editprofile' %}" method="post" enctype="multipart/form-data" id="myForm">
         <h2 class="text-center" >Update Profile</h2>
         {% csrf_token %}
+        
         <label for="profile-image-input" class="profile-preview-mydiv">
           <div class="profile-preview rounded-image-input">
           {% if user.profile.profile_pic %}
-          <img src="{{user.profile.profile_pic.url }}" alt="">
+          <img src="{{ user.profile.profile_pic.url }}" alt="">
           {%else%}
           <img src="{% static 'images/default_profile-s.png' %}" alt="">
           {%endif%}
         </div></label>
-        {{ userform.as_p }}
+      
         {{ profileform.as_p }}
+        {{ userform.as_p }}
+        {{ profilelinkform.as_p }}
         <br>
         <button type="submit"> &nbsp&nbsp Update &nbsp&nbsp</button>
         <a href="{% url 'profile' user.id %}" class="mybtn">&nbsp&nbspCancel&nbsp&nbsp</a>
@@ -245,6 +248,25 @@
     </form>
 
 </div>
+
+<script>
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+    var id_website_link = document.getElementById('id_website_link').value;
+    var id_facebook_link = document.getElementById('id_facebook_link').value;
+    var id_instagram_link = document.getElementById('id_instagram_link').value;
+    var id_linkedin_link = document.getElementById('id_linkedin_link').value;
+    // Remove specific words before submitting the form
+    var cleanedValue1 = id_website_link.replace('http://', '').replace('https://', '').replace('www.', '');
+    var cleanedValue2 = id_facebook_link.replace('http://', '').replace('https://', '').replace('www.', '');
+    var cleanedValue3 = id_instagram_link.replace('http://', '').replace('https://', '').replace('www.', '');
+    var cleanedValue4 = id_linkedin_link.replace('http://', '').replace('https://', '').replace('www.', '');
+
+    document.getElementById('id_website_link').value = cleanedValue1;
+    document.getElementById('id_facebook_link').value = cleanedValue2;
+    document.getElementById('id_instagram_link').value = cleanedValue3;
+    document.getElementById('id_linkedin_link').value = cleanedValue4;
+  });
+</script>
 
 <script>
   function readProfileImageURL(input) {

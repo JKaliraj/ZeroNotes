@@ -20,7 +20,7 @@ class Note(models.Model):
     
 class Profile(models.Model):
     name = models.OneToOneField(User,on_delete=models.CASCADE)
-    bio = models.CharField(max_length=250)
+    bio = models.CharField(max_length=250, blank=True, null=True)
     website_link = models.CharField(max_length=100, blank=True, null=True)
     facebook_link = models.CharField(max_length=100, blank=True, null=True)
     instagram_link = models.CharField(max_length=100, blank=True, null=True)

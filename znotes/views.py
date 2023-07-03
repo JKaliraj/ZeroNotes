@@ -101,13 +101,15 @@ def editprofile(request):
         profile_user = models.Profile.objects.get(name_id=request.user.id)
         userform = forms.UpdateUserForm(request.POST or None, request.FILES or None ,instance=curr_user)
         profileform = forms.ProfileImageForm(request.POST or None , request.FILES or None ,instance=profile_user )
+        profilelinkform = forms.ProfileLinkForm(request.POST or None , request.FILES or None ,instance=profile_user )
         if userform.is_valid() and profileform.is_valid():
             userform.save()
             profileform.save()
+            profilelinkform.save()
             login(request,curr_user)
             return redirect('/profile/%d'%request.user.id)
         else:
-            return render(request, 'editprofile.html', {"userform":userform,"profileform":profileform})
+            return render(request, 'editprofile.html', {"userform":userform,"profileform":profileform,"profilelinkform":profilelinkform})
         
     else:
         redirect('home')

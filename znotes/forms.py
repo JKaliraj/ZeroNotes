@@ -73,6 +73,12 @@ class UpdateUserForm(forms.ModelForm):
 
 class ProfileImageForm(forms.ModelForm):
     profile_pic =  forms.ImageField(label="",required=False,widget=forms.ClearableFileInput(attrs={'class': 'form-control','id': 'profile-image-input'}))
+    
+    class Meta:
+        model = models.Profile
+        fields = ('profile_pic', )
+
+class ProfileLinkForm(forms.ModelForm):
     bio = forms.CharField(required=False,max_length=500, label="Add Bio",widget=forms.Textarea(attrs={"class":"form-control","placeholder":"Bio"}))
     website_link = forms.CharField(required=False,max_length=100, label="",widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Website Link"}))
     facebook_link = forms.CharField(required=False,max_length=100, label="",widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Facebook Link"}))
@@ -81,4 +87,4 @@ class ProfileImageForm(forms.ModelForm):
 
     class Meta:
         model = models.Profile
-        fields = ('profile_pic','bio','website_link','facebook_link','instagram_link','linkedin_link', )
+        fields = ('bio','website_link','facebook_link','instagram_link','linkedin_link', )
